@@ -9,28 +9,33 @@
 ####  Database: MongoDB serves as the data storage for user information and phishing records.
 ####   Containerization: Docker ensures portability and easy environment setup.
 
-
+ ## Prerequisites
+### Please ensure following services installed on your system:
+- Docker installed
+- Node Js 20.x version
 
 ## 1. Clone the Repository
 Start by cloning the repository and navigating to the project directory:
 
-git clone <repository_url>
-cd phishing
+    git clone https://github.com/Alibek10599/phishing-test-task.git
+    cd phishing
 
 ## 2. Set Up Environment Variables
 Copy the example environment variable files and rename them to .env in the respective directories:
 
 
 Backend:
+    
     cd server
-    cp .env.local .env
+    touch .env
 
 
 Frontend:
 
-
     cd client
-    cp .env.local .env
+    touch .env
+
+You can copy the content for .env files from subsequent `.env.local` files
 
 ## 3. Launch the Application
 Run the entire stack using Docker Compose:
@@ -51,11 +56,6 @@ To stop and clean up the application, run:
 
     docker-compose down
 
-### Important Notes
-
- Ensure .env files are properly configured in both backend/ and frontend/ directories before starting the application.
-Troubleshooting Tips
-Docker-Related Issues:
 
 Ensure Docker and Docker Compose are properly installed on your system.
 Check Docker service status if containers fail to start.
