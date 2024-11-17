@@ -4,9 +4,11 @@ import * as sgMail from '@sendgrid/mail';
 
 @Injectable()
 export class EmailService {
+  private sender: string;
   constructor(protected readonly configService: ConfigService) {
-    const { sendGridKey } = this.configService.get('email');
+    const { sendGridKey, sender } = this.configService.get('email');
 
+    this.sender = sender;
     sgMail.setApiKey(sendGridKey);
   }
 
@@ -14,7 +16,7 @@ export class EmailService {
     try {
       const msg: sgMail.MailDataRequired = {
         to,
-        from: 'alibek.khojabekov@alumni.nu.edu.kz',
+        from: this.sender,
         subject: 'Phishing attempt from your department!',
         html: emailContent,
       };
