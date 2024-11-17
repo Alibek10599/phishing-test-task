@@ -1,7 +1,7 @@
 # Full-Stack Application Overview
 
 ## About the Application
-    This project is a full-stack solution designed with NestJS for the backend, React for the frontend, and MongoDB for the database. The application is fully containerized using Docker, allowing for seamless deployment and execution with a single command.
+This project is a full-stack solution designed with NestJS for the backend, React for the frontend, and MongoDB for the database. The application is fully containerized using Docker, allowing for seamless deployment and execution with a single command.
 
 ### Technology Stack
 #### Backend: Built with NestJS, handling phishing simulation and attempt tracking.
