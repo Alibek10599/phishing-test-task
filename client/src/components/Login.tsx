@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../redux/authSlice';
 import { loginRequest } from '../service/authApi';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const handleLogin = async () => {
     try {
@@ -18,6 +20,7 @@ const Login = () => {
       dispatch(login({ user, token }));
 
       localStorage.setItem('token', token);
+      navigate('/phishing-table');
     } catch (err) {
       console.error('Error :', err);
     }
